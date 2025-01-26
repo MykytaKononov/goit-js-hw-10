@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script type="module" crossorigin src="/vanilla-app-template/assets/styles-BdaoXX6Z.js"></script>
+    <script type="module" crossorigin src="/vanilla-app-template/assets/vendor-BbSUbo7J.js"></script>
+    <script type="module" crossorigin src="/vanilla-app-template/assets/2-snackbar-SYV4RVbT.js"></script>
+    <link rel="stylesheet" crossorigin href="/vanilla-app-template/assets/styles-BLJZpk4o.css">
+    <link rel="stylesheet" crossorigin href="/vanilla-app-template/assets/vendor-C1gPI-5C.css">
+  </head>
+  <body>
+    <form class="form">
+      <label class="formlabel">
+        Delay (ms)
+        <input class="fieldsetmsinput" type="number" name="delay" required />
+      </label>
+
+      <fieldset>
+        <legend>State</legend>
+        <label>
+          <input
+            class="fieldsetinput"
+            type="radio"
+            name="state"
+            value="fulfilled"
+            required
+          />
+          Fulfilled
+        </label>
+        <label>
+          <input
+            class="fieldsetinput"
+            type="radio"
+            name="state"
+            value="rejected"
+            required
+          />
+          Rejected
+        </label>
+      </fieldset>
+
+      <button class="fieldsetbutton" type="submit">Create notification</button>
+    </form>
+  </body>
+</html>
