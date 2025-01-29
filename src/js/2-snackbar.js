@@ -9,29 +9,30 @@ form.addEventListener('submit', event => {
 
   const fieldsetinput = document.querySelector('input[name="state"]:checked');
   const delay = fieldsetmsinput.value;
+
   new Promise((resolve, reject) => {
     setTimeout(() => {
       if (fieldsetinput.value === 'fulfilled') {
-        resolve(
-          iziToast.success({
-            title: 'Success',
-            message: `✅ Fulfilled promise in ${delay}ms`,
-            position: 'bottomLeft',
-          })
-        );
-        console.log(`✅ Fulfilled promise in ${delay}ms`);
+        resolve(delay);
       } else {
-        reject(
-          iziToast.error({
-            title: 'Error',
-            message: `❌ Rejected promise in ${delay}ms`,
-            position: 'bottomLeft',
-          })
-        );
-        console.log(`❌ Rejected promise in ${delay}ms`);
+        reject(delay);
       }
     }, fieldsetmsinput.value);
-  });
+  })
+    .then(delay => {
+      iziToast.success({
+        title: 'Success',
+        message: `✅ Fulfilled promise in ${delay}ms`,
+        position: 'bottomLeft',
+      });
+    })
+    .catch(delay => {
+      iziToast.error({
+        title: 'Error',
+        message: `❌ Rejected promise in ${delay}ms`,
+        position: 'bottomLeft',
+      });
+    });
   fieldsetmsinput.value = '';
   fieldsetinput.checked = false;
 });
